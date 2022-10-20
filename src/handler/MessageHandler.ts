@@ -26,7 +26,11 @@ export class MessageHandler {
       time: Math.round(this.message.createdTimestamp / 1000),
       content: this.message.content,
     };
-    await axios.post(config.webhookURL, payload).catch(() => {
+    await axios.post(config.webhookURL, payload, {
+      headers: {
+        authorization: config.secret
+      }
+    }).catch(() => {
       // do nothing
     });
   }
