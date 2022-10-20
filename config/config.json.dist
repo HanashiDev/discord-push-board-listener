@@ -1,0 +1,7 @@
+{
+    "discord": {
+        "botToken": "",
+        "guildID": ""
+    },
+    "webhookURL": ""
+}
