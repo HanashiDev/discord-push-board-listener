@@ -17,6 +17,7 @@ jobs:
       with:
         node-version: "16"
         cache: "npm"
+    - run: cp config/config.json.dist config/config.json
     - run: npm install
     - run: npx tsc --noEmit
   eslint:
