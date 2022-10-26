@@ -10,7 +10,7 @@ Voraussetzungen:
 - Docker muss installiert sein
 
 Anleitung:
-1. Kone das Repository (z.B. via Konsole: `git@github.com:HanashiDev/discord-push-board-listener.git`)
+1. Klone das Repository (z.B. via Konsole: `git@github.com:HanashiDev/discord-push-board-listener.git`)
 2. Benenne die Datei `config/config.json.dist` in `config/config.json` um.
 3. Fülle die Datei `config/config.json` aus. Siehe dazu weiter unten "Config ausfüllen".
 4. Starte auf der Konsole `docker build . -t "discord-push"` um das Docker Image zu bauen.
@@ -22,7 +22,7 @@ Voraussetzung:
 - NodeJS muss installiert sind
 
 Anleitung:
-1. Kone das Repository (z.B. via Konsole: `git@github.com:HanashiDev/discord-push-board-listener.git`)
+1. Klone das Repository (z.B. via Konsole: `git@github.com:HanashiDev/discord-push-board-listener.git`)
 2. Benenne die Datei `config/config.json.dist` in `config/config.json` um.
 3. Fülle die Datei `config/config.json` aus. Siehe dazu weiter unten "Config ausfüllen".
 4. Installiere Abhängigkeiten via Konsole `npm install -g typescript pm2`
