@@ -9,7 +9,7 @@ export class DiscordApp {
 
   constructor() {
     DiscordApp.client.on("ready", () => this.clientIsReady());
-    DiscordApp.client.on("messageCreate", (message: Message) => void this.handleMessages(message));
+    DiscordApp.client.on("messageCreate", (message: Message) => this.handleMessages(message));
   }
 
   public async start(): Promise<void> {
@@ -39,8 +39,8 @@ export class DiscordApp {
     });
   }
 
-  private async handleMessages(message: Message) {
-    await new MessageHandler(message).handle();
+  private handleMessages(message: Message) {
+    new MessageHandler(message).handle();
   }
 }
 
