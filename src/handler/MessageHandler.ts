@@ -9,7 +9,7 @@ export class MessageHandler {
     this.message = message;
   }
 
-  public async handle(): Promise<void> {
+  public handle(): void {
     if (
       !(this.message.channel instanceof ThreadChannel) ||
       this.message.guildId != config.discord.guildID ||
@@ -18,6 +18,10 @@ export class MessageHandler {
       return;
     }
 
+    setTimeout(() => void this.sendResponse(), 5 * 1000);
+  }
+
+  public async sendResponse(): Promise<void> {
     const payload = {
       discordThreadID: this.message.channelId,
       discordMessageID: this.message.id,
