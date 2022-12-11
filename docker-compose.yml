@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  discordbot:
+    build: .
+    environment:
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN:-""}
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID:-""}
+      WOLTLAB_WEBHOOK_URL: ${WOLTLAB_WEBHOOK_URL:-""}
+      WOLTLAB_WEBHOOK_SECRET: ${WOLTLAB_WEBHOOK_SECRET:-""}

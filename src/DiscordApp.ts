@@ -1,5 +1,4 @@
 import { ActivityType, Client, GatewayIntentBits, Message } from "discord.js";
-import * as config from "../config/config.json";
 import MessageHandler from "./handler/MessageHandler";
 
 export class DiscordApp {
@@ -13,7 +12,7 @@ export class DiscordApp {
   }
 
   public async start(): Promise<void> {
-    await DiscordApp.client.login(config.discord.botToken);
+    await DiscordApp.client.login(process.env.DISCORD_BOT_TOKEN);
   }
 
   private clientIsReady(): void {
