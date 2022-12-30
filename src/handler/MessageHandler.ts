@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Message, ThreadChannel } from "discord.js";
+import Config from "../config/Config";
 
 export class MessageHandler {
   private message: Message;
@@ -11,7 +12,7 @@ export class MessageHandler {
   public handle(): void {
     if (
       !(this.message.channel instanceof ThreadChannel) ||
-      this.message.guildId != process.env.DISCORD_GUILD_ID ||
+      this.message.guildId != Config.DISCORD_GUILD_ID ||
       this.message.id == this.message.channelId
     ) {
       return;
@@ -30,9 +31,9 @@ export class MessageHandler {
       content: this.message.content,
     };
     await axios
-      .post(process.env.WOLTLAB_WEBHOOK_URL, payload, {
+      .post(Config.WOLTLAB_WEBHOOK_URL, payload, {
         headers: {
-          authorization: process.env.WOLTLAB_WEBHOOK_SECRET,
+          authorization: Config.WOLTLAB_WEBHOOK_SECRET,
         },
       })
       .catch(() => {
